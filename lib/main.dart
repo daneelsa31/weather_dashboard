@@ -33,7 +33,6 @@ class WeatherAppPreview extends StatelessWidget {
             borderRadius: BorderRadius.circular(40),
             child: Scaffold(
               backgroundColor: const Color(0xFFF0F3F7),
-              // ADDED: The AppBar section from your final code
               appBar: AppBar(
                 backgroundColor: Colors.transparent,
                 elevation: 0,
@@ -49,8 +48,26 @@ class WeatherAppPreview extends StatelessWidget {
                 ),
                 centerTitle: true,
               ),
-              body: const Center(
-                child: Text("Header Ready"),
+              body: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 30),
+
+                    // --- ADDED: OUTER TRAY ---
+                    Container(
+                      width: double.infinity,
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFDDE3EA),
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                      // This height is temporary so you can see the tray
+                      child: const SizedBox(height: 150), 
+                    ),
+                    const SizedBox(height: 20),
+                  ],
+                ),
               ),
             ),
           ),
