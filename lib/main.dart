@@ -12,13 +12,31 @@ class WeatherAppPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      // This is the base background color for the entire project
-      backgroundColor: Color(0xFFD1D9E6), 
+    return Scaffold(
+      backgroundColor: const Color(0xFFD1D9E6),
       body: Center(
-        child: Text(
-          "Project Initialized",
-          style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.w500),
+        child: Container(
+          // Simulating the phone screen dimensions from your final code
+          width: 375,
+          height: 720,
+          decoration: BoxDecoration(
+            color: const Color(0xFFF0F3F7),
+            borderRadius: BorderRadius.circular(40),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1), // Subtle shadow
+                blurRadius: 30,
+                offset: const Offset(0, 20),
+              ),
+            ],
+          ),
+          // We use ClipRRect to ensure any future children follow the 40px rounding
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(40),
+            child: Container(
+              color: const Color(0xFFF0F3F7),
+            ),
+          ),
         ),
       ),
     );
