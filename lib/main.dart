@@ -109,6 +109,8 @@ class WeatherAppPreview extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 20),
+
+                          // --- UPDATED: REPLACED PLACEHOLDER WITH GRIDVIEW ---
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             padding: const EdgeInsets.all(16),
@@ -116,10 +118,22 @@ class WeatherAppPreview extends StatelessWidget {
                               color: const Color(0xFFCFD8E1),
                               borderRadius: BorderRadius.circular(24),
                             ),
-                            child: const SizedBox(
-                              height: 100, 
-                              width: double.infinity,
-                              child: Center(child: Text("Grid will go here")),
+                            child: GridView.count(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              crossAxisCount: 4,
+                              mainAxisSpacing: 10,
+                              crossAxisSpacing: 10,
+                              children: [
+                                _buildTile('10:00', Icons.wb_sunny, '26°C'),
+                                _buildTile('11:00', Icons.wb_sunny, '27°C'),
+                                _buildTile('13:00', Icons.cloud_queue, '25°C'),
+                                _buildTile('13:00', Icons.cloud, '24°C', tempColor: Colors.grey, iconColor: Colors.grey),
+                                _buildTile('10:00', Icons.wb_sunny, '25°C'),
+                                _buildTile('14:00', Icons.beach_access, '24°C', tempColor: Colors.grey, iconColor: Colors.grey),
+                                _buildTile('14:00', Icons.cloud, '23°C', tempColor: Colors.grey, iconColor: Colors.grey),
+                                _buildTile('15:00', Icons.grain, '22°C', tempColor: Colors.grey, iconColor: Colors.grey),
+                              ],
                             ),
                           ),
                         ],
@@ -135,7 +149,6 @@ class WeatherAppPreview extends StatelessWidget {
     );
   }
 
-  // --- ADDED THIS IN THIS COMMIT ---
   Widget _buildTile(String time, IconData icon, String temp, 
       {Color tempColor = Colors.black, Color iconColor = Colors.orangeAccent}) {
     return Container(
