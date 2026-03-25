@@ -16,7 +16,7 @@ class WeatherAppPreview extends StatelessWidget {
       backgroundColor: const Color(0xFFD1D9E6),
       body: Center(
         child: Container(
-          width: 375,
+          width: 420,
           height: 720,
           decoration: BoxDecoration(
             color: const Color(0xFFF0F3F7),
@@ -94,7 +94,7 @@ class WeatherAppPreview extends StatelessWidget {
                                         ),
                                       ),
                                       const Text(
-                                        'Cloudy with a\nchance of sunshin',
+                                        'Cloudy with a\nchance of sunshine',
                                         style: TextStyle(color: Colors.black54, fontSize: 14, height: 1.2),
                                       ),
                                       const SizedBox(height: 4),
