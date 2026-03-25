@@ -63,7 +63,7 @@ class WeatherAppPreview extends StatelessWidget {
                       child: Column(
                         children: [
                           SizedBox(
-                            height: 150, 
+                            height: 150,
                             width: double.infinity,
                             child: Stack(
                               alignment: Alignment.center,
@@ -109,8 +109,6 @@ class WeatherAppPreview extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 20),
-
-                          // --- UPDATED: REPLACED PLACEHOLDER WITH GRIDVIEW ---
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             padding: const EdgeInsets.all(16),
@@ -139,8 +137,22 @@ class WeatherAppPreview extends StatelessWidget {
                         ],
                       ),
                     ),
+                    const SizedBox(height: 20), // Final spacing
                   ],
                 ),
+              ),
+              // --- HOP C: THE BOTTOM NAVIGATION BAR ---
+              bottomNavigationBar: BottomNavigationBar(
+                elevation: 0,
+                backgroundColor: Colors.transparent,
+                selectedItemColor: Colors.blue,
+                unselectedItemColor: Colors.grey,
+                type: BottomNavigationBarType.fixed,
+                items: const [
+                  BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
+                  BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+                  BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+                ],
               ),
             ),
           ),
