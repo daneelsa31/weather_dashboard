@@ -16,7 +16,6 @@ class WeatherAppPreview extends StatelessWidget {
       backgroundColor: const Color(0xFFD1D9E6),
       body: Center(
         child: Container(
-          // Simulating the phone screen dimensions from your final code
           width: 375,
           height: 720,
           decoration: BoxDecoration(
@@ -24,17 +23,35 @@ class WeatherAppPreview extends StatelessWidget {
             borderRadius: BorderRadius.circular(40),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1), // Subtle shadow
+                color: Colors.black.withOpacity(0.1),
                 blurRadius: 30,
                 offset: const Offset(0, 20),
               ),
             ],
           ),
-          // We use ClipRRect to ensure any future children follow the 40px rounding
           child: ClipRRect(
             borderRadius: BorderRadius.circular(40),
-            child: Container(
-              color: const Color(0xFFF0F3F7),
+            child: Scaffold(
+              backgroundColor: const Color(0xFFF0F3F7),
+              // ADDED: The AppBar section from your final code
+              appBar: AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                title: const Padding(
+                  padding: EdgeInsets.only(top: 25.0),
+                  child: Text(
+                    'Weather Dashboard',
+                    style: TextStyle(
+                      color: Color(0xFF1A212E),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                centerTitle: true,
+              ),
+              body: const Center(
+                child: Text("Header Ready"),
+              ),
             ),
           ),
         ),
