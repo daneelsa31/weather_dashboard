@@ -68,7 +68,6 @@ class WeatherAppPreview extends StatelessWidget {
                             child: Stack(
                               alignment: Alignment.center,
                               children: [
-                                // --- ADDED: THE WEATHER IMAGE ---
                                 Positioned(
                                   left: -10,
                                   child: Image.network(
@@ -80,9 +79,37 @@ class WeatherAppPreview extends StatelessWidget {
                                         const Icon(Icons.wb_sunny, size: 100, color: Colors.orangeAccent),
                                   ),
                                 ),
+                                // --- ADDED: THE TEMPERATURE & LOCATION COLUMN ---
+                                Positioned(
+                                  right: 20,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        '25°C',
+                                        style: TextStyle(
+                                          fontSize: 68,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xFF1A212E),
+                                          letterSpacing: -2,
+                                        ),
+                                      ),
+                                      const Text(
+                                        'Cloudy with a\nchance of sunshine',
+                                        style: TextStyle(color: Colors.black54, fontSize: 14, height: 1.2),
+                                      ),
+                                      const SizedBox(height: 4),
+                                      const Text(
+                                        'London, UK',
+                                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
+                          const SizedBox(height: 20),
                         ],
                       ),
                     ),
