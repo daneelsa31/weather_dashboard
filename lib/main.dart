@@ -79,7 +79,6 @@ class WeatherAppPreview extends StatelessWidget {
                                         const Icon(Icons.wb_sunny, size: 100, color: Colors.orangeAccent),
                                   ),
                                 ),
-                                // --- ADDED: THE TEMPERATURE & LOCATION COLUMN ---
                                 Positioned(
                                   right: 20,
                                   child: Column(
@@ -95,7 +94,7 @@ class WeatherAppPreview extends StatelessWidget {
                                         ),
                                       ),
                                       const Text(
-                                        'Cloudy with a\nchance of sunshine',
+                                        'Cloudy with a\nchance of sunshin',
                                         style: TextStyle(color: Colors.black54, fontSize: 14, height: 1.2),
                                       ),
                                       const SizedBox(height: 4),
@@ -110,6 +109,21 @@ class WeatherAppPreview extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 20),
+
+                          // --- ADDED: THE INNER GRID CONTAINER ---
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 10),
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFCFD8E1),
+                              borderRadius: BorderRadius.circular(24),
+                            ),
+                            child: const SizedBox(
+                              height: 100, // Temporary height to see it
+                              width: double.infinity,
+                              child: Center(child: Text("Grid will go here")),
+                            ),
+                          ),
                         ],
                       ),
                     ),
