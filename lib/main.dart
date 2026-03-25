@@ -109,8 +109,6 @@ class WeatherAppPreview extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 20),
-
-                          // --- ADDED: THE INNER GRID CONTAINER ---
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             padding: const EdgeInsets.all(16),
@@ -119,7 +117,7 @@ class WeatherAppPreview extends StatelessWidget {
                               borderRadius: BorderRadius.circular(24),
                             ),
                             child: const SizedBox(
-                              height: 100, // Temporary height to see it
+                              height: 100, 
                               width: double.infinity,
                               child: Center(child: Text("Grid will go here")),
                             ),
@@ -133,6 +131,34 @@ class WeatherAppPreview extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  // --- ADDED THIS IN THIS COMMIT ---
+  Widget _buildTile(String time, IconData icon, String temp, 
+      {Color tempColor = Colors.black, Color iconColor = Colors.orangeAccent}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(time, style: const TextStyle(fontSize: 10, color: Colors.grey, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 4),
+          Icon(icon, size: 18, color: iconColor),
+          const SizedBox(height: 4),
+          Text(
+            temp, 
+            style: TextStyle(
+              fontSize: 12, 
+              fontWeight: FontWeight.bold,
+              color: tempColor,
+            ),
+          ),
+        ],
       ),
     );
   }
